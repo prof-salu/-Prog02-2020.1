@@ -10,6 +10,7 @@ public class Funcionario {
         this.nome = nome;
         this.salario = salario;
     }
+    
     @Deprecated  
     public void exibeSalario(){
         System.out.println("Salario: " + salario);
@@ -31,5 +32,12 @@ public class Funcionario {
     public double calculaBonificacao(){
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" + "nome=" + nome + ", salario=" + salario + ", sexo=" + sexo + '}';
+    }
+    
+    
     
 }
