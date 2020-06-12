@@ -87,6 +87,22 @@ public class ControleCliente {
                 }
             }
         });
+        
+        visao.getBtnApagar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ClienteDAO dao = new ClienteDAO();
+                
+                capturarFormulario();
+                
+                if(dao.apagar(modelo)){
+                    JOptionPane.showMessageDialog(visao, "CLiente apagado com sucesso!");
+                    limparFormulario();
+                }else{
+                    JOptionPane.showMessageDialog(visao, "Ocorreu um erro!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
     }
     
     private void limparFormulario(){
